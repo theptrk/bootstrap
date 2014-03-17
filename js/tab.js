@@ -66,7 +66,9 @@
       element.addClass('active')
 
       if (transition) {
+        /* jshint ignore:start */
         element[0].offsetWidth // reflow for transition
+        /* jshint ignore:end */
         element.addClass('in')
       } else {
         element.removeClass('fade')
@@ -92,13 +94,13 @@
   // TAB PLUGIN DEFINITION
   // =====================
 
-  function Plugin( option ) {
+  function Plugin(option) {
     return this.each(function () {
       var $this = $(this)
       var data  = $this.data('bs.tab')
 
       if (!data) $this.data('bs.tab', (data = new Tab(this)))
-      if (typeof option == 'string') data[option]()
+      if (typeof option === 'string') data[option]()
     })
   }
 
