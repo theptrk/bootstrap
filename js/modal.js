@@ -170,9 +170,9 @@
 
       this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
         if (e.target !== e.currentTarget) return
-        this.options.backdrop === 'static'
-          ? this.$element[0].focus.call(this.$element[0])
-          : this.hide.call(this)
+        this.options.backdrop === 'static' ?
+          this.$element[0].focus.call(this.$element[0]) :
+          this.hide.call(this)
       }, this))
 
       /* jshint ignore:start */
