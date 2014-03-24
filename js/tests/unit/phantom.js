@@ -24,7 +24,9 @@
   // These methods connect QUnit to PhantomJS.
   QUnit.log = function (obj) {
     // What is this I don’t even
-    if (obj.message === '[object Object], undefined:undefined') { return }
+    if (obj.message === '[object Object], undefined:undefined') {
+      return
+    }
     // Parse some stuff before sending it.
     var actual = QUnit.jsDump.parse(obj.actual)
     var expected = QUnit.jsDump.parse(obj.expected)
